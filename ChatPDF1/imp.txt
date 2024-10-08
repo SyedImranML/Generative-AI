@@ -1,0 +1,17 @@
+Steps for Gen AI PDF
+
+-------------------------------
+
+PS C:\Users\Syed\ChatPDF> py --version
+Python 3.11.8
+PS C:\Users\Syed\ChatPDF> python -m venv .venv
+PS C:\Users\Syed\ChatPDF> cd .\.venv\Scripts\              
+PS C:\Users\Syed\ChatPDF\.venv\Scripts> .\activate
+(.venv) PS C:\Users\Syed\ChatPDF\.venv\Scripts> cd ../..          
+(.venv) PS C:\Users\Syed\ChatPDF> pip install -r .\requirements.txt
+(.venv) PS C:\Users\Syed\ChatPDF> pip install streamlit pypdf2 langchain python-dotenv faiss-cpu openai huggingface_hub
+pip install InstructorEmbedding sentence-transformers
+
+pip install cryptography
+
+(.venv) PS C:\Users\Syed\ChatPDF> python .\encrypt_code.py
