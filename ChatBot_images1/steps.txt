@@ -1,0 +1,185 @@
+1. Setting Up Local Development in VSCode
+
+Prerequisites:
+Python: Ensure Python is installed on your local machine. If not, download Python.
+
+VSCode: You already have VSCode installed.
+Steps:
+Create a Virtual Environment (Optional but Recommended)
+
+Open VSCode and the terminal (Ctrl + `).
+
+python -m venv venv
+.\venv\Scripts\activate
+
+Install Required Libraries:
+1. pip install torch google-generativeai pillow matplotlib requests ipython
+2. pip install jupyter
+3. pip install streamlit
+
+
+streamlit run app.py
+
+
+To use the Google Generative AI API (e.g., for Gemini models), you need to generate your own Google API key. Follow these steps to create and configure your API key:
+
+Step-by-Step Guide to Create a Google API Key:
+1. Create a Google Cloud Account
+If you don't have a Google Cloud account, sign up at Google Cloud.
+Google offers a free tier with credits to get started.
+
+link : https://cloud.google.com/
+
+
+teps to Fix:
+Create a Valid Google API Key:
+
+Visit the Google Cloud Console.
+Sign in with your Google account.
+Create a new project (if you don’t have one already):
+Go to the top-left corner, click the project dropdown, and select New Project.
+Give it a name and create the project.
+Navigate to APIs & Services > Library.
+In the search bar, type Generative Language API.
+Click on the result and enable the API for your project.
+Go to APIs & Services > Credentials.
+Click Create Credentials and select API Key.
+Copy the generated API key.
+Enable Billing:
+
+The Generative Language API may require billing to be enabled on your Google Cloud project. Make sure your project has a valid payment method.
+Go to Billing in the Cloud Console and ensure you have set up your billing account.
+Use the New API Key in Your Code:
+
+Replace the placeholder API key (YOUR_GOOGLE_API_KEY) in your code with the valid API key you just created:
+
+
+ChatwithGraphs - project name i have given in google cloud
+https://console.cloud.google.com/projectcreate?previousPage=%2Fwelcome%3Fproject%3Dbanded-charmer-436202-g4&organizationId=0
+
+
+i have selected this 
+"Generate content with the Gemini API"
+This resource provides detailed information on how to use the generateContent API method, which is important for generating responses based on user inputs like images, graphs, and invoices.
+
+
+Enable the Necessary API:
+
+After creating your project, select your project from the dropdown.
+Navigate to the APIs & Services section.
+Click on Enable APIs and Services at the top.
+Search for "Generative Language API" (Gemini).
+Click on it and then click Enable.
+Create API Key:
+
+Go to the Credentials tab under APIs & Services.
+Click on Create Credentials and select API Key.
+A new API key will be generated. Copy this key.
+Secure the API Key (Optional but Recommended):
+
+Under API restrictions, restrict the key to only the APIs your project needs, such as the Generative Language API.
+Save your changes.
+Use the API Key in Your Code:
+
+Replace the existing API key with the newly generated key in your code:
+
+
+Google API Key : AIzaSyBsGk6-tQBQdTABMN7e59d91kNb4Wp7XX8
+
+AIzaSyDchZ1PS_Rg3Xws61AkZPrQPKio5ANBMdM
+
+Steps to Enable the API:
+Go to the API Enablement Page:
+
+Follow this link to go directly to the page where you can enable the Generative Language API: Generative Language API - Enable
+Enable the API:
+
+Once you're on the API page, click Enable to activate the Generative Language API for your project.
+Wait for Propagation:
+
+After enabling the API, it may take a few minutes for the activation to propagate across Google's systems.
+Retry the Query:
+
+Once the API is enabled, rerun your application or query, and it should work.
+If you haven't created a project on Google Cloud:
+Create a new project in Google Cloud Console if you don't have one.
+Create a new project
+Enable the Generative Language API for your new project by following the steps above.
+If you've already followed these steps and the issue persists after a few minutes, you may want to double-check that you're using the correct project ID (947520794132) and that your API key is valid.
+
+https://www.youtube.com/watch?v=ErZW8oMPY8I
+https://www.youtube.com/watch?v=9t_CdzyAwDI&list=PLYIE4hvbWhsCrb70_5h3VQnpOALlX2G69
+
+Research:
+https://github.com/codebasics/langchain/blob/main/2_news_research_tool_project/main.py
+
+https://www.linkedin.com/posts/simranjeet97_day27-75hardgenai-generativeai-activity-7166677697148960768-0usR/?utm_source=share&utm_medium=member_desktop
+
+https://github.com/simranjeet97/75DayHard_GenAI_LLM_Challenge/blob/main/ChatWithImages/gemma_chatwithgraphs.py
+https://www.linkedin.com/feed/update/urn:li:activity:7120808986790019074/
+
+
+Hi Fatima
+ 
+9/2 2:03 PM Call ended 18m 13s 
+
+ 
+Hi Suresh at what time can we all coonect 
+ 
+can we conn at 8.3o IST
+ 
+8.30 pm IST
+ 
+in next half n hour
+ 
+Hi Fatima
+ 
+hi 
+ 
+9/4 9:02 PM Fatima Shaista started a meeting.
+
+ 
+Fatima Shaista added Kaushik Karri to the chat.
+
+ 
+Hi Ram,
+ 
+The estimated cost of VM per month for Canada central is as below,
+ 
+If you use a Windows 10, 16gb ram, Premium SSD for your Azure VM in the Canada Central region, the cost will depend on the size of the SSD and its performance tier.
+ 
+Here’s a rough breakdown of the pricing:
+VM Instance (Standard D4 v3):
+Hourly rate: Approximately $0.69 per hour.
+Premium SSD Pricing:
+For a P1 (32 GB) Premium SSD: Around $4.78 per month.
+For a P2 (64 GB) Premium SSD: Around $19.71 per month
+ 
+The total cost per month would be the sum of the VM instance cost and the Premium SSD cost. For instance:
+If you run the VM 24/7 for a month:
+VM Cost: 0.69 USD/hour * 730 hours (approx.) = $503.70 per month.
+Premium SSD (P2, 64 GB): $19.71 per month.
+Total Monthly Cost: $523.41 per month.
+ 
+Hi 
+ 
+9/4 9:17 PM Meeting ended 15m 26s 
+
+ 
+VM Name: umcds-vm
+
+search for remote desktop connection in your system search engine
+
+Public ip address: 4.206.136.118
+
+UserName: umcds-vm
+
+Password: umcdsvm@2024#
+
+
+https://google-quick-search-box.en.uptodown.com/android/download
+ 
+
+
+
+

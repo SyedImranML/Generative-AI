@@ -1,0 +1,67 @@
+import streamlit as st
+import google.generativeai as genai
+import requests
+from io import BytesIO
+import PIL.Image
+import matplotlib.pyplot as plt
+import torch
+
+# Set API key for Google Generative AI
+GOOGLE_API_KEY = 'AIzaSyDchZ1PS_Rg3Xws61AkZPrQPKio5ANBMdM'  # Replace with your actual Google API Key
+genai.configure(api_key=GOOGLE_API_KEY)
+
+# Check if GPU is enabled
+is_gpu_enabled = torch.cuda.is_available()
+
+# Streamlit App Title
+st.title("VisualChat AI")
+
+#st.write("Convert Images, Graphs, and Invoices into JSON Format or Python Code")
+
+# Sidebar for uploading an image or providing a URL
+st.sidebar.title("Upload or Enter Image URL")
+option = st.sidebar.selectbox("Choose Input Type", ("Image URL", "Upload Image"))
+
+image = None  # Initialize the image variable
+
+if option == "Image URL":
+    image_url = st.sidebar.text_input("Enter Image URL")
+    if image_url:
+        try:
+            response = requests.get(image_url)
+            image = PIL.Image.open(BytesIO(response.content))
+            st.image(image, caption="Uploaded Image", use_column_width=True)
+        except Exception as e:
+            st.error(f"Error loading image: {e}")
+
+elif option == "Upload Image":
+    uploaded_image = st.sidebar.file_uploader("Upload an Image", type=["jpg", "jpeg", "png"])
+    if uploaded_image:
+        try:
+            image = PIL.Image.open(uploaded_image)
+            st.image(image, caption="Uploaded Image", use_column_width=True)
+        except Exception as e:
+            st.error(f"Error loading ima ge: {e}")
+st.markdown('<div class="powered-by">Powered By UMC Data Fusion ⚙️</div>', unsafe_allow_html=True)
+
+# Vision model setup
+#vision_model = genai.GenerativeModel('gemini-pro-vision')
+vision_model = genai.GenerativeModel('gemini-1.5-flash')
+
+# Input for user query
+st.write("### Ask a question about the uploaded Image or Graph:")
+user_input = st.text_input("Query", placeholder="Type your query here...")
+
+# Function to process image and query
+def generate_image_response(image, query):
+    try:
+        response = vision_model.generate_content([query, image])
+        return response.text
+    except Exception as e:
+        return f"Error processing query: {e}"
+
+# Submit and display result
+if user_input and image:  # Only proceed if there's a user query and an image
+    st.write("### Response:")
+    result = generate_image_response(image, user_input)
+    st.write(result)

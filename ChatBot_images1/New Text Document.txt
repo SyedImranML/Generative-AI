@@ -1,0 +1,31 @@
+1. Setting Up Local Development in VSCode
+
+Prerequisites:
+Python: Ensure Python is installed on your local machine. If not, download Python.
+
+VSCode: You already have VSCode installed.
+Steps:
+Create a Virtual Environment (Optional but Recommended)
+
+Open VSCode and the terminal (Ctrl + `).
+
+python -m venv venv
+.\venv\Scripts\activate
+
+Install Required Libraries:
+1. pip install torch google-generativeai pillow matplotlib requests ipython
+2. pip install jupyter
+3. pip install streamlit
+
+
+streamlit run app.py
+
+
+To use the Google Generative AI API (e.g., for Gemini models), you need to generate your own Google API key. Follow these steps to create and configure your API key:
+
+Step-by-Step Guide to Create a Google API Key:
+1. Create a Google Cloud Account
+If you don't have a Google Cloud account, sign up at Google Cloud.
+Google offers a free tier with credits to get started.
+
+link : https://cloud.google.com/
